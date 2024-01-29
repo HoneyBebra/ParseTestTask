@@ -28,8 +28,7 @@ def main():
 
         products = data.products
         if not products:
-            i += 1
-            continue
+            break
         for product in products:
             brands.append(product.brandName)
             names.append(product.displayName)
