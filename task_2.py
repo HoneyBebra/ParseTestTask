@@ -22,11 +22,13 @@ def main():
             )
         except BadResponseCode as Er:
             print(Er)
+            i += 1
             continue
 
         products = data.products
         if not products:
-            break
+            i += 1
+            continue
         for product in products:
             names.append(product.displayName)
             urls.append(f'https://www.letu.ru/product/{product.sefName}/{product.repositoryId}')
