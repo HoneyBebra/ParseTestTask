@@ -27,8 +27,7 @@ def main():
 
         products = data.products
         if not products:
-            i += 1
-            continue
+            break
         for product in products:
             names.append(product.displayName)
             urls.append(f'https://www.letu.ru/product/{product.sefName}/{product.repositoryId}')
