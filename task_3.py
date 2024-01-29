@@ -23,11 +23,13 @@ def main():
             )
         except BadResponseCode as Er:
             print(Er)
+            i += 1
             continue
 
         products = data.products
         if not products:
-            break
+            i += 1
+            continue
         for product in products:
             brands.append(product.brandName)
             names.append(product.displayName)
